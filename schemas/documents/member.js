@@ -1,30 +1,24 @@
 import {DocumentsIcon} from '@sanity/icons'
 
 export default {
-  name: 'article',
-  title: 'Articles',
+  name: 'member',
+  title: 'Members',
   type: 'document',
   icon: DocumentsIcon,
   fields: [
     {
       name: 'title',
-      title: 'Title',
-      type: 'string',
+      title: 'Company Name',
+      type: 'string'
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'URL Slug',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
       }
-    },
-    {
-      name: 'articleCategory',
-      title: 'Category',
-      type: 'reference',
-      to: {type: 'category'}
     },
     {
       name: 'body',

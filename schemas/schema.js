@@ -8,7 +8,12 @@ import portableText from './objects/portableText'
 // - import schema documents
 import article from './documents/article'
 import category from './documents/category'
-import tag from './documents/tag'
+import company from './documents/company'
+import member from './documents/member'
+import show from './documents/show'
+import social from './documents/social'
+// import tag from './documents/tag'
+import venue from './documents/venue'
 
 // export schema configurations into the studio...
 export default createSchema({
@@ -18,7 +23,12 @@ export default createSchema({
     // documents exports
     article,
     category,
-    tag,
+    company,
+    member,
+    show,
+    social,
+    // tag,
+    venue,
 
     // objects export
     portableText,

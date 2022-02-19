@@ -1,0 +1,39 @@
+# Objects
+- PortableText (rich text)
+
+# Documents
+- Company
+  - "company info"
+  - Single page, editable(?)
+  - copy members doc to start ..ref below...
+- Social
+  - two way ref - members & company
+    - twitter
+    - instagram
+    - facebook
+    - site(url)
+    - other
+- Pages (Posts)
+  - title
+  - image
+  - description
+  - slug
+  - ref - other pages (*research*)
+  - content (rich + images)
+- Shows
+  - title
+  - image
+  - description
+  - slug
+  - ref - venue
+  - date
+    - array of values for each show date
+- Venue
+  - title
+  - image
+  - description
+  - url
+  - address
+    - break this out?
+  - map
+  - content

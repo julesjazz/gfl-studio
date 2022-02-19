@@ -2,7 +2,7 @@ import {FilterIcon} from '@sanity/icons'
 
 export default {
   name: 'category',
-  title: 'Category',
+  title: 'Categories',
   type: 'document',
   icon: FilterIcon,
   fields: [

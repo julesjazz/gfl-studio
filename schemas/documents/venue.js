@@ -1,15 +1,15 @@
 import {DocumentsIcon} from '@sanity/icons'
 
 export default {
-  name: 'article',
-  title: 'Articles',
+  name: 'venue',
+  title: 'Venues',
   type: 'document',
   icon: DocumentsIcon,
   fields: [
     {
       name: 'title',
-      title: 'Title',
-      type: 'string',
+      title: 'Venue Name',
+      type: 'string'
     },
     {
       name: 'slug',
@@ -20,16 +20,5 @@ export default {
         maxLength: 96
       }
     },
-    {
-      name: 'articleCategory',
-      title: 'Category',
-      type: 'reference',
-      to: {type: 'category'}
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'portableText'
-    }
   ]
 }
