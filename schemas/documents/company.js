@@ -1,10 +1,11 @@
-import {DocumentsIcon} from '@sanity/icons'
+import React from 'react'
+import Icon from '../../components/emojiIcon'
 
 export default {
   name: 'company',
   title: 'Company',
   type: 'document',
-  icon: DocumentsIcon,
+  icon: () => <Icon emoji="🎭" />,
   fields: [
     {
       name: 'title',
@@ -23,7 +24,7 @@ export default {
     {
       name: 'body',
       title: 'Body',
-      type: 'portableText'
+      type: 'pText'
     }
   ]
 }

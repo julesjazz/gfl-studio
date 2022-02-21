@@ -1,10 +1,11 @@
-import {TagIcon} from '@sanity/icons'
+import React from 'react'
+import Icon from '../../components/emojiIcon'
 
 export default {
   name: 'tag',
   title: 'Tag',
   type: 'document',
-  icon: TagIcon,
+  icon: () => <Icon emoji="🏷" />,
   fields: [
     {
       name: 'title',

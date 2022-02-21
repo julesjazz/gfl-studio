@@ -20,7 +20,6 @@
     "@sanity/default-login": "^2.27.0",
     "@sanity/desk-tool": "^2.27.0",
     "@sanity/eslint-config-studio": "^2.0.0",
-    "@sanity/icons": "^1.2.5",
     "@sanity/vision": "^2.27.0",
     "eslint": "^8.6.0",
     "prop-types": "^15.7",

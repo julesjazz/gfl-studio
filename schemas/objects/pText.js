@@ -1,6 +1,9 @@
+// full rich text "portable text"
+// with images, 'H1' reserved for document title
+
 export default {
-  title: 'Portable Text Block Content',
-  name: 'portableText',
+  title: 'Portable Text Content',
+  name: 'pText',
   type: 'array',
   of: [
     {
@@ -11,7 +14,6 @@ export default {
       },
       styles: [
         {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},

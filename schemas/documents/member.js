@@ -1,29 +1,82 @@
-import {DocumentsIcon} from '@sanity/icons'
+import React from 'react'
+import Icon from '../../components/emojiIcon'
 
 export default {
   name: 'member',
   title: 'Members',
   type: 'document',
-  icon: DocumentsIcon,
+  icon: () => <Icon emoji="👩‍🎤" />,
+  preview: {
+    select: {
+      title: 'name',
+      nickname: 'nickname',
+      pronouns: 'pronouns',
+      media: 'image'
+    },
+    prepare({title, nickname, pronouns, media}) {
+      return {
+        title: nickname || title,
+        subtitle: `${pronouns || ''}`,
+        media: media || <Icon emoji="🧑‍🎤" />
+      }
+    }
+  },
   fields: [
     {
-      name: 'title',
-      title: 'Company Name',
+      name: 'name',
+      title: 'Name',
       type: 'string'
     },
     {
-      name: 'slug',
-      title: 'URL Slug',
-      type: 'slug',
+      name: 'nickname',
+      title: 'Nickname',
+      type: 'string'
+    },
+    {
+      name: 'pronouns',
+      title: 'Pronouns',
+      type: 'string'
+    },
+    {
+      name: 'hometown',
+      title: 'Home Town',
+      type: 'object',
+      description: 'Optional, where are you from?',
+      fields: [
+        {
+          name: 'city',
+          title: 'City',
+          type: 'string'
+        },
+        {
+          name: 'country',
+          title: 'Country',
+          type: 'string'
+        }
+      ]
+    },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Image',
       options: {
-        source: 'title',
-        maxLength: 96
+        hotspot: true
       }
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'portableText'
+      name: 'roles',
+      type: 'array',
+      title: 'Roles',
+      of: [
+        {
+          type: 'role'
+        }
+      ]
+    },
+    {
+      name: 'bio',
+      title: 'Bio',
+      type: 'pTextLite'
     }
   ]
 }

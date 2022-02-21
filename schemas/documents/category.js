@@ -1,10 +1,11 @@
-import {FilterIcon} from '@sanity/icons'
+import React from 'react'
+import Icon from '../../components/emojiIcon'
 
 export default {
   name: 'category',
   title: 'Categories',
   type: 'document',
-  icon: FilterIcon,
+  icon: () => <Icon emoji="⚙️" />,
   fields: [
     {
       name: 'title',
