@@ -41,7 +41,7 @@ export default {
       name: 'hometown',
       title: 'Home Town',
       type: 'object',
-      description: 'Optional, where are you from?',
+      description: 'Where are you from?',
       fields: [
         {
           name: 'city',
@@ -64,9 +64,21 @@ export default {
       }
     },
     {
+      name: 'social',
+      type: 'array',
+      title: 'Socials',
+      description: 'Social media & Contact info',
+      of: [
+        {
+          type: 'social'
+        }
+      ]
+    },
+    {
       name: 'roles',
       type: 'array',
       title: 'Roles',
+      description: 'Roles & Tiles',
       of: [
         {
           type: 'role'

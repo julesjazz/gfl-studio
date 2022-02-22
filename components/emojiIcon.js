@@ -13,5 +13,3 @@ Icon.propTypes = {
 }
 
 export default Icon
-
-// not working /sadface/, save for later
