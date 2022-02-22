@@ -21,6 +21,7 @@ export default {
         maxLength: 96
       }
     },
+    // show date - related to tickets sold
     {
       name: 'body',
       title: 'Body',

@@ -18,6 +18,7 @@ import member from './documents/member'
 import show from './documents/show'
 import tag from './documents/tag'
 import venue from './documents/venue'
+import sales from './documents/sales'
 
 // export schema configurations into the studio...
 export default createSchema({
@@ -31,6 +32,7 @@ export default createSchema({
     article,
     venue,
     show,
+    sales,
     tag,
     category,
 

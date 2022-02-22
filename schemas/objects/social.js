@@ -7,20 +7,11 @@ export default {
   type: 'object',
   // icon: () => <Icon emoji="🐤" />,
   fields: [
-    // nested socials with icons
-    /*
-    email 📧
-    phone 📞
-    twitter 🐤
-    instagram 📷
-    facebook 👍
-    github 💻
-    other 👤
-    */
     {
       name: 'socialInfo',
       title: 'Social Details',
       type: 'array',
+      
       of: [
         {
           name: 'email',
