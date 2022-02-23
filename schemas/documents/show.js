@@ -6,6 +6,20 @@ export default {
   title: 'Shows',
   type: 'document',
   icon: () => <Icon emoji="🎬" />,
+  preview: {
+    select: {
+      title: 'title',
+      summary: 'summary',
+      media: 'image'
+    },
+    prepare({title, summary, media}) {
+      return {
+        title: title,
+        subtitle: `${summary || ''}`,
+        media: media || <Icon emoji="🎬" />
+      }
+    }
+  },
   fields: [
     {
       name: 'title',
@@ -19,6 +33,41 @@ export default {
       options: {
         source: 'title',
         maxLength: 96
+      }
+    },
+    {
+      name: 'premierDate',
+      title: 'Premier',
+      type: 'date'
+    },
+    {
+      name: 'showDate',
+      title: 'Show Dates',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'showDate'}],
+          initialValue: {
+            show: {
+              _type: 'reference',
+              // _ref: ''
+            }
+          }
+        }
+      ]
+    },
+    {
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
+    },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Image',
+      options: {
+        hotspot: true
       }
     },
     // show date - related to tickets sold

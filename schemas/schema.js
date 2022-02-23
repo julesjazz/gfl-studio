@@ -9,6 +9,7 @@ import pTextLite from './objects/pTextLite'
 import role from './objects/role'
 import social from './objects/social'
 
+
 // - import schema documents
 // (documents are anything you may want to edit and sort on its own)
 import article from './documents/article'
@@ -19,6 +20,7 @@ import show from './documents/show'
 import tag from './documents/tag'
 import venue from './documents/venue'
 import sales from './documents/sales'
+import showDate from './documents/showDate'
 
 // export schema configurations into the studio...
 export default createSchema({
@@ -32,6 +34,7 @@ export default createSchema({
     article,
     venue,
     show,
+    showDate,
     sales,
     tag,
     category,

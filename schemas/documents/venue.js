@@ -14,12 +14,32 @@ export default {
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'Venue Slug',
+      description: 'page slug for frontend routing',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96
       }
+    },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'phone',
+      title: 'Phone Number',
+      type: 'string'
+    },
+    {
+      name: 'mapurl',
+      title: 'Map URL',
+      description: 'link to google maps or other map site',
+      type: 'url'
     },
     {
       name: 'address',
