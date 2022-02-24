@@ -9,4 +9,4 @@
 node_modules
 
 # Compiled sanity studio
-/dist
+# /dist
