@@ -14,7 +14,7 @@ api-docs/
 
 # Ignore output when doing manual tests
 _site/
-studio/dist
+
 
 package-lock.json
 
