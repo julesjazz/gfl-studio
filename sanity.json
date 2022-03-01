@@ -28,6 +28,10 @@
     {
       "implements": "part:@sanity/form-builder/input/file/asset-sources",
       "path": "./parts/assetSources.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/style-override.css"
     }
   ]
 }

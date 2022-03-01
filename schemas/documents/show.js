@@ -41,13 +41,13 @@ export default {
       type: 'date'
     },
     {
-      name: 'showDate',
-      title: 'Show Dates',
+      name: 'performance',
+      title: 'Performances',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'showDate'}],
+          to: [{type: 'performance'}],
           initialValue: {
             show: {
               _type: 'reference',

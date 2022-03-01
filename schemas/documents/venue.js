@@ -72,6 +72,11 @@ export default {
           type: 'string'
         },
       ]
+    },
+    {
+      name: 'notes',
+      title: 'Venue Notes',
+      type: 'text'
     }
   ]
 }
