@@ -56,6 +56,12 @@ export default {
       ]
     },
     {
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
+      description: 'Content Summary',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'pText'
