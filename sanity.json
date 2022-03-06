@@ -30,6 +30,10 @@
       "path": "./parts/assetSources.js"
     },
     {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "components/logo.js"
+    },
+    {
       "implements": "part:@sanity/base/theme/variables/override-style",
       "path": "./styles/style-override.css"
     }
