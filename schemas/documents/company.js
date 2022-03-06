@@ -20,25 +20,40 @@ export default {
       }
     }
   },
+  groups: [
+    {name:'details', title: 'Details', default: true },
+    {name:'media', title: 'Media' },
+    {name:'content', title: 'Content' },
+  ],
   fields: [
     {
       name: 'title',
       title: 'Company Name',
-      type: 'string'
+      type: 'string',
+      group: 'details',
     },
     {
       name: 'slug',
       title: 'URL Slug',
       type: 'slug',
+      group: 'details',
       options: {
         source: 'title',
         maxLength: 96
       }
     },
     {
+      name: 'imageAlt',
+      type: 'string',
+      group: 'media',
+      title: 'Image Alt Text',
+      description: 'Company Promo Image Description'
+    },
+    {
       name: 'image',
       type: 'image',
       title: 'Image',
+      group: 'media',
       description: 'Company Promo Image',
       options: {
         hotspot: true
@@ -48,6 +63,7 @@ export default {
       name: 'social',
       type: 'array',
       title: 'Socials',
+      group: 'details',
       description: 'Social media & Contact info',
       of: [
         {
@@ -59,11 +75,13 @@ export default {
       name: 'summary',
       title: 'Summary',
       type: 'text',
+      group: 'content',
       description: 'Content Summary',
     },
     {
       name: 'body',
       title: 'Body',
+      group: 'content',
       type: 'pText'
     }
   ]
