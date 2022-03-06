@@ -22,6 +22,7 @@ export default {
   },
   groups: [
     {name:'details', title: 'Details', default: true },
+    {name:'contact', title: 'Contact Info' },
     {name:'media', title: 'Media' },
     {name:'content', title: 'Content' },
   ],
@@ -59,12 +60,19 @@ export default {
         hotspot: true
       }
     },
+    {name: 'url', title: '🌐 URL', type: 'string', group: 'contact'},
+    {name: 'email', title: '＠ Email', type: 'string', group: 'contact'},
+    {name: 'phone', title: '📞 Phone', type: 'string', group: 'contact'},
+    {name: 'twitter', title: '🐦 Twitter', type: 'string', group: 'contact'},
+    {name: 'instagram', title: '🤳 Instagram', type: 'string', group: 'contact'},
+    {name: 'facebook', title: '👍 Facebook', type: 'string', group: 'contact'},
+    {name: 'other', title: '👤 Other', type: 'string', group: 'contact'},
     {
       name: 'social',
       type: 'array',
       title: 'Socials',
-      group: 'details',
-      description: 'Social media & Contact info',
+      group: 'contact',
+      description: '(Not sure if this will be used)',
       of: [
         {
           type: 'social'
