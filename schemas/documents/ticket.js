@@ -8,19 +8,21 @@ import Icon from '../../components/emojiIcon'
 
 export default {
   name: 'ticket',
-  title: 'Ticket Sales',
+  title: 'Tickets',
   type: 'document',
   icon: () => <Icon emoji="🎟" />,
   preview: {
     select: {
       title: 'name',
       checkedIn: 'checkedIn',
-      numberOfTickets: 'numberOfTickets'
+      numberOfTickets: 'numberOfTickets',
+      noted: 'notes',
+      email: 'email'
     },
-    prepare({title, checkedIn, numberOfTickets}) {
+    prepare({title, checkedIn, numberOfTickets, email, noted}) {
       return {
-        title: title,
-        subtitle: `#tickets: ${numberOfTickets}`,
+        title: `${noted ? '🚸 ' + title : title}`,
+        subtitle: `${numberOfTickets}🎟 ${'@:',email || ''}`,
         media: () => {
           if (checkedIn === true) return <Icon emoji="✅"/>
           else return <Icon emoji="🎟"/>
@@ -35,14 +37,37 @@ export default {
       type: 'string'
     },
     {
+      name: 'email',
+      title: 'Email',
+      type: 'email'
+    },
+    {
       name: 'checkedIn',
       title: 'Checked In ✅',
       type: 'boolean'
     },
     {
+      name: 'show',
+      title: 'Show',
+      type: 'reference',
+      to: [{type: 'show'}]
+    },
+    {
+      name: 'performance',
+      title: 'Performance',
+      type: 'reference',
+      to: [{type: 'performance'}]
+    },
+    {
       name: 'numberOfTickets',
       title: 'Number of Tickets',
       type: 'number'
+    },
+    {
+      name: 'notes',
+      title: 'Notes',
+      description: 'Special requests & Acccessibility concerns',
+      type: 'text'
     }
   ]
 }
