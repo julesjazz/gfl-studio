@@ -30,6 +30,13 @@ export default {
   ],
   fields: [
     {
+      name: 'active',
+      title: 'Active Member',
+      type: 'boolean',
+      group: 'details',
+      initialValue: true
+    },
+    {
       name: 'name',
       title: 'Name',
       group: 'details',
@@ -48,15 +55,16 @@ export default {
       group: 'details',
       type: 'string'
     },
-    // TODO: have slug use name if !nickname
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       group: 'details',
       description: 'Page URL (site.com/{slug}), required',
+      validation: Rule => Rule.required(),
       options: {
-        source: 'nickname'
+        source: doc => doc.nickname ? doc.nickname : doc.name,
+        maxLength: 96,
       }
     },
     {name: 'url', title: '🌐 URL', type: 'string', group: 'contact'},
