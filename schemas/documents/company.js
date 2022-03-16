@@ -11,10 +11,8 @@ export default {
       title: 'title',
       media: 'image'
     },
-    prepare({title, nickname, pronouns, media}) {
+    prepare({title, media}) {
       return {
-        // title: nickname || title,
-        // subtitle: `${pronouns || ''}`,
         title: title,
         media: media || <Icon emoji="🎭" />
       }
@@ -24,7 +22,6 @@ export default {
     {name:'details', title: 'Details', default: true },
     {name:'contact', title: 'Contact Info' },
     {name:'media', title: 'Media' },
-    {name:'content', title: 'Content' },
   ],
   fields: [
     {
@@ -34,21 +31,11 @@ export default {
       group: 'details',
     },
     {
-      name: 'slug',
-      title: 'URL Slug',
-      type: 'slug',
-      group: 'details',
-      options: {
-        source: 'title',
-        maxLength: 96
-      }
-    },
-    {
       name: 'imageAlt',
       type: 'string',
       group: 'media',
       title: 'Image Alt Text',
-      description: 'Company Promo Image Description'
+      description: 'Optional Custom Promo "imageAlt"'
     },
     {
       name: 'image',
@@ -56,6 +43,7 @@ export default {
       title: 'Image',
       group: 'media',
       description: 'Company Promo Image',
+      // TODO: add image ref to  description
       options: {
         hotspot: true
       }
@@ -68,28 +56,16 @@ export default {
     {name: 'facebook', title: '👍 Facebook', type: 'string', group: 'contact'},
     {name: 'other', title: '👤 Other', type: 'string', group: 'contact'},
     {
-      name: 'social',
-      type: 'array',
-      title: 'Socials',
-      group: 'contact',
-      description: '(Not sure if this will be used)',
-      of: [
-        {
-          type: 'social'
-        }
-      ]
-    },
-    {
       name: 'summary',
       title: 'Summary',
       type: 'text',
-      group: 'content',
-      description: 'Content Summary',
+      group: 'details',
+      description: 'Company Summary (SEO)',
     },
     {
       name: 'body',
       title: 'Body',
-      group: 'content',
+      group: 'details',
       type: 'pText'
     }
   ]

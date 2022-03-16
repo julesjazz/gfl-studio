@@ -21,63 +21,66 @@ export default {
       }
     }
   },
+  groups: [
+    {name:'details', title: 'Details', default: true },
+    {name:'contact', title: 'Contact Info' },
+    {name:'media', title: 'Media' },
+    {name:'bio', title: 'Bio' },
+    {name:'roles', title: 'Roles' },
+  ],
   fields: [
     {
       name: 'name',
       title: 'Name',
+      group: 'details',
       type: 'string'
     },
     {
       name: 'nickname',
       title: 'Nickname',
+      description: 'Used for member url slug',
+      group: 'details',
       type: 'string'
     },
     {
       name: 'pronouns',
       title: 'Pronouns',
+      group: 'details',
       type: 'string'
     },
+    // TODO: have slug use name if !nickname
     {
-      name: 'hometown',
-      title: 'Home Town',
-      type: 'object',
-      description: 'Where are you from?',
-      fields: [
-        {
-          name: 'city',
-          title: 'City',
-          type: 'string'
-        },
-        {
-          name: 'country',
-          title: 'Country',
-          type: 'string'
-        }
-      ]
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      group: 'details',
+      description: 'Page URL (site.com/{slug}), required',
+      options: {
+        source: 'nickname'
+      }
     },
+    {name: 'url', title: '🌐 URL', type: 'string', group: 'contact'},
+    {name: 'email', title: '＠ Email', type: 'string', group: 'contact'},
+    {name: 'phone', title: '📞 Phone', type: 'string', group: 'contact'},
+    {name: 'twitter', title: '🐦 Twitter', type: 'string', group: 'contact'},
+    {name: 'instagram', title: '🤳 Instagram', type: 'string', group: 'contact'},
+    {name: 'facebook', title: '👍 Facebook', type: 'string', group: 'contact'},
+    {name: 'other', title: '👤 Other', type: 'string', group: 'contact'},
     {
       name: 'image',
       type: 'image',
       title: 'Image',
+      group: 'media',
       options: {
         hotspot: true
       }
     },
-    {
-      name: 'social',
-      type: 'array',
-      title: 'Socials',
-      description: 'Social media & Contact info',
-      of: [
-        {
-          type: 'social'
-        }
-      ]
-    },
+    // TODO: member roles two-way relation with performances 
     {
       name: 'roles',
       type: 'array',
       title: 'Roles',
+      group: 'roles',
       description: 'Roles & Tiles',
       of: [
         {
@@ -86,8 +89,15 @@ export default {
       ]
     },
     {
+      name: 'summary',
+      type: 'text',
+      title: 'Summary',
+      group: 'bio'
+    },
+    {
       name: 'bio',
       title: 'Bio',
+      group: 'bio',
       type: 'pTextLite'
     }
   ]

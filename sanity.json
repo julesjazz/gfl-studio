@@ -13,8 +13,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "documents-pane",
-    "@sanity/vision",
-    "media-library"
+    "media-library",
+    "@sanity/vision"
   ],
   "parts": [
     {
@@ -26,7 +26,7 @@
       "path": "components/logo.js"
     },
     {
-      "implements": "part:@sanity/base/theme/variables/override-style",
+      "implements": "part:@sanity/base/theme/variables/override-style", 
       "path": "./styles/style-override.css"
     }
   ]
