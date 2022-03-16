@@ -29,7 +29,8 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'placeholder: to be auto populated [show,date,venue]'
+      description: 'placeholder: to be auto populated [show,date,venue]',
+      
     },
     {
       name: 'notes',

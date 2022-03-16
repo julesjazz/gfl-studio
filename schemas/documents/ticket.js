@@ -22,7 +22,7 @@ export default {
     prepare({title, checkedIn, numberOfTickets, email, noted}) {
       return {
         title: `${noted ? '🚸 ' + title : title}`,
-        subtitle: `${numberOfTickets}🎟 ${'@:',email || ''}`,
+        subtitle: `${numberOfTickets} 🎟 ${'@:',email || ''}`,
         media: () => {
           if (checkedIn === true) return <Icon emoji="✅"/>
           else return <Icon emoji="🎟"/>
@@ -44,7 +44,8 @@ export default {
     {
       name: 'checkedIn',
       title: 'Checked In ✅',
-      type: 'boolean'
+      type: 'boolean',
+      initialValue: false
     },
     {
       name: 'show',
@@ -57,6 +58,11 @@ export default {
       title: 'Performance',
       type: 'reference',
       to: [{type: 'performance'}]
+    },
+    {
+      name: 'price',
+      description: 'Price paid per ticket ($US)',
+      type: 'number'
     },
     {
       name: 'numberOfTickets',

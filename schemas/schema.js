@@ -2,13 +2,12 @@ import createSchema from 'part:@sanity/base/schema-creator'
 
 // Base Schema Type
 import schemaTypes from 'all:part:@sanity/base/schema-type'
+
 // - import schema objects
 // (objects are functional and reference datasets, not for editing directly)
 import pText from './objects/pText'
 import pTextLite from './objects/pTextLite'
 import role from './objects/role'
-import social from './objects/social'
-
 
 // - import schema documents
 // (documents are anything you may want to edit and sort on its own)
@@ -42,8 +41,7 @@ export default createSchema({
     // objects export
     pText,
     pTextLite,
-    role,
-    social
+    role
 
   ]),
 })
