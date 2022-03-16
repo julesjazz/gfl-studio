@@ -28,6 +28,10 @@
     {
       "implements": "part:@sanity/base/theme/variables/override-style", 
       "path": "./styles/style-override.css"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./parts/deskStructure.js"
     }
   ]
 }
