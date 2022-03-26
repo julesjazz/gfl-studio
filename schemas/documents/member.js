@@ -22,7 +22,7 @@ export default {
     }
   },
   groups: [
-    {name:'details', title: 'Details', default: true },
+    {name:'details', title: 'Details' },
     {name:'contact', title: 'Contact Info' },
     {name:'media', title: 'Media' },
     {name:'bio', title: 'Bio' },

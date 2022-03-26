@@ -48,12 +48,6 @@ export default {
       initialValue: false
     },
     {
-      name: 'show',
-      title: 'Show',
-      type: 'reference',
-      to: [{type: 'show'}]
-    },
-    {
       name: 'performance',
       title: 'Performance',
       type: 'reference',

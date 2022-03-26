@@ -34,6 +34,11 @@ export default {
       group: 'details',
     },
     {
+      name:'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

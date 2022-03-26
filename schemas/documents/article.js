@@ -14,6 +14,11 @@ export default {
       description: 'Document title, primary header'
     },
     {
+      name:'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
