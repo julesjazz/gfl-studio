@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon from '../../components/emojiIcon'
-import venue from './venue'
+
 
 export default {
   name: 'performance',
@@ -26,11 +26,17 @@ export default {
       to: [{type: 'venue'}]
     },
     {
+      name: 'seats',
+      title: 'Steats',
+      description: 'Number of seats available',
+      type: 'number',
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
       description: 'placeholder: to be auto populated [show,date,venue]',
-      
+      // TODO: slugify: show-date-venue
     },
     {
       name: 'notes',
