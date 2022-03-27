@@ -10,23 +10,32 @@ export default {
     select: {
       title: 'title',
       summary: 'summary',
-      media: 'image'
+      media: 'image',
+      featured: 'featured'
     },
-    prepare({title, summary, media}) {
+    prepare({title, featured, summary, media}) {
       return {
-        title: title,
+        title: `${featured ? '⭐️ ' + title : title}`,
         subtitle: `${summary || ''}`,
         media: media || <Icon emoji="🎬" />
       }
     }
   },
   groups: [
-    {name:'details', title: 'Details', default: true },
+    {name:'details', title: 'Details' },
     {name:'media', title: 'Media' },
     {name:'info', title: 'Show Info' },
     {name:'performances', title: 'Performances' },
   ],
   fields: [
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      group: 'details',
+      description: 'Featured show',
+      initialValue: false
+    },
     {
       name: 'title',
       title: 'Title',
