@@ -9,14 +9,16 @@ export default {
   preview: {
     select: {
       title: 'title',
-      summary: 'summary',
+      summary: 'subtitle',
       media: 'image',
-      featured: 'featured'
+      featured: 'featured',
+      onsale: 'onsale'
     },
-    prepare({title, featured, summary, media}) {
+    // title: ,
+    prepare({title, featured, onsale, summary, media}) {
       return {
         title: `${featured ? '⭐️ ' + title : title}`,
-        subtitle: `${summary || ''}`,
+        subtitle: `${onsale ? '💲 ' + summary : summary}`,
         media: media || <Icon emoji="🎬" />
       }
     }
@@ -34,6 +36,14 @@ export default {
       type: 'boolean',
       group: 'details',
       description: 'Featured show',
+      initialValue: false
+    },
+    {
+      name: 'onsale',
+      title: 'On Sale',
+      description: 'Show is on sale',
+      type: 'boolean',
+      group: 'details',
       initialValue: false
     },
     {
