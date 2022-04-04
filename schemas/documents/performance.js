@@ -10,12 +10,16 @@ export default {
   preview: {
     select: {
       title: 'title',
+      showtitle: 'show.title',
       date: 'date',
-      media: 'show.image'
+      media: 'show.image',
+      venue: 'venue.title'
     },
-    prepare({title, date, media}) {
+    prepare({venue, showtitle, date, media}) {
       return {
-        title: title,
+        title: `${showtitle ? showtitle : 'Add a show'}`,
+        subtitle: `${date ? date.slice(0,10) + '@' + venue : 'Add a date + venue'}`,
+        // subtitle: `${showtitle ? title + showtitle : title}`,
         // subtitle: date.toISOString().slice(0,10), //  ${date.toLocaleTimeString("en-US")}
         media: media || <Icon emoji="🎩" />
       }
@@ -25,15 +29,18 @@ export default {
     {
       name: 'show',
       title: 'Show',
+      description: 'Required: Assigned Show',
       type: 'reference',
       to: [{type: 'show'}],
       validation: Rule => Rule.required(),
     },
     {
       name: 'date',
-      title: 'Performance Date & Time',
+      title: 'Date',
+      description: 'Required: Performance Date & Time',
       type: 'datetime',
       validation: Rule => Rule.required(),
+      initialValue: new Date(),
       options: {
         dateFormat: 'YYYY-MM-DD',
         timeFormat: 'h:mm A',
@@ -42,6 +49,7 @@ export default {
     {
       name: 'venue',
       title: 'Venue',
+      description: 'Required: Performance Venue',
       type: 'reference',
       to: [{type: 'venue'}],
       validation: Rule => Rule.required(),
@@ -52,18 +60,21 @@ export default {
       description: 'Number of seats available',
       type: 'number',
     },
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      description: 'placeholder: to be auto populated [show,date,venue]',
-      // TODO: slugify: show-date-venue
-    },
+    // {
+    //   name: 'title',
+    //   title: 'Title',
+    //   description: 'TBD',
+    //   type: 'slug',
+    //   options: {
+    //     source: 'date',
+    //     slugify: input => input.slice(0,10)
+    //   }
+    // },
     {
       name: 'notes',
       title: 'Performance Notes',
       type: 'text',
-      description: "Notes on this date's performance"
+      description: "Optional notes about the performance",
     }
   ]
 }
