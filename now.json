@@ -1,0 +1,10 @@
+{
+  "name": "Sanity Studio",
+  "alias": "sanity-studio",
+  "scale": {
+    "bru1": {
+      "min": 1,
+      "max": "auto"
+    }
+  }
+}

@@ -7,8 +7,10 @@
   "author": "Miriam Suzanne <miriam@oddbird.net>, Julia Silver <julesrsilver@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "build": "sanity build --output public -y",
+    "now-start": "node server.js",
     "start": "sanity start",
-    "build": "sanity build --output public -y"
+    "upgrade": "sanity upgrade"
   },
   "keywords": [
     "sanity"
