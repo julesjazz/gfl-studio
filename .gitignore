@@ -23,3 +23,7 @@ package-lock.json
 test/stubs-layout-cache/_includes/*.js
 
 .DS_Store
+
+# backups
+production.tar.gz
+development.tar.gz
