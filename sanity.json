@@ -50,7 +50,7 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./parts/deskStructure.js"
+      "path": "./structure/deskStructure.js"
     }
   ]
 }
