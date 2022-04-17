@@ -10,12 +10,24 @@ S.list()
     S.documentTypeListItems()
   )
 ```
+
 -----------------------------
-## Lists
-### list
-### 
-## List Items
-## Document Nodes
-## Default Document Node
-## Document Node Views
-## Menus
+
+# Layout Plan
+- **COMPANY**
+  - single company doc "Grapefruit Lab"
+  - company members
+- **ARTICLES**
+  - Article category refs mapped per `article.category._ref.title`
+  (`[ CatA, CatB, CatC, /NoCat/ ]`)
+- **SHOWS**
+  - **LIST** of type `show.title`
+    - **SINGLE** show doc title = show.title
+    - **PERFORMANCES** per selected show
+- **TICKETS**
+  - **PERFORMANCE** list, sort by date asc, `>= date.now`
+- -- *divider* --
+- **EVERYTHING**
+  - all document types without additional sorting
+  (optionally: `import { schemaDocs } from '../schemas/schema'`)
+  - ???
