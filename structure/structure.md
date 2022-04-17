@@ -16,7 +16,7 @@ S.list()
 # Layout Plan
 - **COMPANY**
   - single company doc "Grapefruit Lab"
-  - company members
+  - company members, maybe
 - **ARTICLES**
   - Article category refs mapped per `article.category._ref.title`
   (`[ CatA, CatB, CatC, /NoCat/ ]`)
@@ -26,6 +26,7 @@ S.list()
     - **PERFORMANCES** per selected show
 - **TICKETS**
   - **PERFORMANCE** list, sort by date asc, `>= date.now`
+  - Optional catchall of unassigned tickets
 - -- *divider* --
 - **EVERYTHING**
   - all document types without additional sorting
