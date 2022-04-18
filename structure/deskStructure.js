@@ -1,21 +1,6 @@
-import S from '@sanity/desk-tool/structure-builder'
-import { schemaDocs } from '../schemas/schema'
-
+import S from '@sanity/desk-tool/structure-builder';
 
 export default () =>
-S.list()
-  .title('GRAPEFRUIT LAB')
-  .items([
-    ...S.documentTypeListItems(),
-    S.divider(),
-  ])
-
-// INITIAL:
-// export default () =>
-// S.list()
-//   .title('GRAPEFRUIT LAB')
-//   .items(
-//     S.documentTypeListItems()
-//   )
-
-// ... = spread syntax
+  S.list()
+    .title('GRAPEFRUIT LAB')
+    .items([...S.documentTypeListItems(), S.divider()]);

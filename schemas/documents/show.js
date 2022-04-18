@@ -1,5 +1,5 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'show',
@@ -12,39 +12,39 @@ export default {
       summary: 'subtitle',
       media: 'image',
       featured: 'featured',
-      onsale: 'onsale'
+      onsale: 'onsale',
     },
     // title: ,
-    prepare({title, featured, onsale, summary, media}) {
+    prepare({ title, featured, onsale, summary, media }) {
       return {
         title: `${featured ? '⭐️ ' + title : title}`,
         subtitle: `${onsale ? '💲 ' + summary : summary}`,
-        media: media || <Icon emoji="🎬" />
-      }
-    }
+        media: media || <Icon emoji="🎬" />,
+      };
+    },
   },
   groups: [
-    {name:'details', title: 'Details' },
-    {name:'media', title: 'Media' },
-    {name:'info', title: 'Show Info' },
-    {name:'performances', title: 'Performances' },
+    { name: 'details', title: 'Details' },
+    { name: 'media', title: 'Media' },
+    { name: 'info', title: 'Show Info' },
+    { name: 'performances', title: 'Performances' },
   ],
   fields: [
     {
+      group: 'details',
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
-      group: 'details',
       description: 'Featured show',
-      initialValue: false
+      initialValue: false,
     },
     {
       name: 'onsale',
       title: 'On Sale',
-      description: 'Show is on sale',
       type: 'boolean',
+      description: 'Show is on sale',
       group: 'details',
-      initialValue: false
+      initialValue: false,
     },
     {
       name: 'title',
@@ -53,9 +53,10 @@ export default {
       group: 'details',
     },
     {
-      name:'subtitle',
+      name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
+      group: 'details',
     },
     {
       name: 'slug',
@@ -64,8 +65,8 @@ export default {
       group: 'details',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'premierDate',
@@ -81,14 +82,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'performance'}],
+          to: [{ type: 'performance' }],
           initialValue: {
             show: {
               _type: 'reference',
-            }
-          }
-        }
-      ]
+            },
+          },
+        },
+      ],
     },
     {
       name: 'summary',
@@ -102,15 +103,15 @@ export default {
       title: 'Image',
       group: 'media',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     // show date - related to tickets sold
     {
       name: 'body',
       title: 'Body',
+      type: 'pText',
       group: 'info',
-      type: 'pText'
-    }
-  ]
-}
+    },
+  ],
+};
