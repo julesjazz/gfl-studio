@@ -29,3 +29,4 @@ export default () =>
 - **EVERYTHING**
   - all document types without additional sorting
     (optionally: `import { schemaDocs } from '../schemas/schema'`)
+

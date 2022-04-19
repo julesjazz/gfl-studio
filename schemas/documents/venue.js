@@ -3,7 +3,7 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'venue',
-  title: 'Venues',
+  title: 'Venue',
   type: 'document',
   icon: () => <Icon emoji="🏟" />,
   fields: [

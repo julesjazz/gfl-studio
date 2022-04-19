@@ -3,9 +3,12 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'show',
-  title: 'Shows',
+  title: 'Show',
   type: 'document',
   icon: () => <Icon emoji="🎬" />,
+  orderings: [
+    {title: 'Premier Date', name: 'premierDate', by: [{field: 'premier', direction: 'desc'}]},
+  ],
   preview: {
     select: {
       title: 'title',

@@ -5,6 +5,6 @@ const sanityClient = client.withConfig({
 });
 
 sanityClient
-  .fetch({ query: '*[_type == "company" && title == "Grapefruit Lab"][0]{_id}' })
+  .fetch({query: `*[_type == "company" && title == "Grapefruit Lab"][0]._id`})
   .then(console.log)
   .catch(console.error);

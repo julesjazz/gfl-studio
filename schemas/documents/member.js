@@ -3,7 +3,7 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'member',
-  title: 'Members',
+  title: 'Member',
   type: 'document',
   icon: () => <Icon emoji="👩‍🎤" />,
   preview: {

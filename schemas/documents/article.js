@@ -3,9 +3,23 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'article',
-  title: 'Articles',
+  title: 'Article',
   type: 'document',
   icon: () => <Icon emoji="📝" />,
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image',
+      category: 'category.title',
+    },
+    prepare({ title, category, media }) {
+      return {
+        title: title,
+        subtitle: category,
+        media: media || <Icon emoji="🎭" />,
+      };
+    },
+  },
   fields: [
     {
       name: 'title',

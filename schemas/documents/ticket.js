@@ -8,7 +8,7 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'ticket',
-  title: 'Tickets',
+  title: 'Ticket',
   type: 'document',
   icon: () => <Icon emoji="🎟" />,
   preview: {

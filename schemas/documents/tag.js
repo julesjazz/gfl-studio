@@ -3,7 +3,7 @@ import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'tag',
-  title: 'Tags',
+  title: 'Tag',
   type: 'document',
   icon: () => <Icon emoji="🏷" />,
   preview: {
