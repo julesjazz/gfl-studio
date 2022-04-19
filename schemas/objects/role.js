@@ -1,5 +1,5 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'role',
@@ -9,19 +9,19 @@ export default {
   fields: [
     {
       name: 'roleName',
-      type: 'string',
       title: 'Role Title',
+      type: 'string',
     },
     {
       name: 'shows',
-      type: 'array',
       title: 'Shows',
+      type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'show'}]
-        }
-      ]
+          to: [{ type: 'show' }],
+        },
+      ],
     },
-  ]
-}
+  ],
+};

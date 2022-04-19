@@ -1,9 +1,9 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'category',
-  title: 'Categories',
+  title: 'Category',
   type: 'document',
   icon: () => <Icon emoji="⚙️" />,
   preview: {
@@ -12,13 +12,13 @@ export default {
       media: 'icon',
       description: 'description',
     },
-    prepare({title, media, description}) {
+    prepare({ title, media, description }) {
       return {
         title: title,
         subtitle: description,
-        media: <Icon emoji={media} />
-      }
-    }
+        media: <Icon emoji={media} />,
+      };
+    },
   },
   fields: [
     {
@@ -31,13 +31,14 @@ export default {
       title: 'Icon',
       type: 'string',
       description: 'Optional emoji or character',
-      valdiation: Rule => Rule.min(1).max(3).warning('Single character or emoji as an icon.'),
-      initialValue: '⚙️'
+      valdiation: (Rule) =>
+        Rule.min(1).max(3).warning('Single character or emoji as an icon.'),
+      initialValue: '⚙️',
     },
     {
       name: 'description',
       title: 'Description',
       type: 'string',
-    }
+    },
   ],
-}
+};

@@ -3,12 +3,12 @@
 // - as the intent is to use this for reference of tickets sold
 // ticket sales to be sorted by sell date in structure builder
 
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'ticket',
-  title: 'Tickets',
+  title: 'Ticket',
   type: 'document',
   icon: () => <Icon emoji="🎟" />,
   preview: {
@@ -17,57 +17,57 @@ export default {
       checkedIn: 'checkedIn',
       numberOfTickets: 'numberOfTickets',
       noted: 'notes',
-      email: 'email'
+      email: 'email',
     },
-    prepare({title, checkedIn, numberOfTickets, email, noted}) {
+    prepare({ title, checkedIn, numberOfTickets, email, noted }) {
       return {
         title: `${noted ? '🚸 ' + title : title}`,
-        subtitle: `${numberOfTickets} 🎟 ${'@:',email || ''}`,
+        subtitle: `${numberOfTickets} 🎟 ${('@:', email || '')}`,
         media: () => {
-          if (checkedIn === true) return <Icon emoji="✅"/>
-          else return <Icon emoji="🎟"/>
-        }
-      }
-    }
+          if (checkedIn === true) return <Icon emoji="✅" />;
+          else return <Icon emoji="🎟" />;
+        },
+      };
+    },
   },
   fields: [
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'email',
       title: 'Email',
-      type: 'email'
+      type: 'email',
     },
     {
       name: 'checkedIn',
       title: 'Checked In ✅',
       type: 'boolean',
-      initialValue: false
+      initialValue: false,
     },
     {
       name: 'performance',
       title: 'Performance',
       type: 'reference',
-      to: [{type: 'performance'}]
+      to: [{ type: 'performance' }],
     },
     {
       name: 'price',
+      type: 'number',
       description: 'Price paid per ticket ($US)',
-      type: 'number'
     },
     {
       name: 'numberOfTickets',
       title: 'Number of Tickets',
-      type: 'number'
+      type: 'number',
     },
     {
       name: 'notes',
       title: 'Notes',
+      type: 'text',
       description: 'Special requests & Acccessibility concerns',
-      type: 'text'
-    }
-  ]
-}
+    },
+  ],
+};

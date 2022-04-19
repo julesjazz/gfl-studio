@@ -10,28 +10,29 @@ export default {
       title: 'Block',
       type: 'block',
       options: {
-        spellCheck: true
+        spellCheck: true,
       },
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'Quote', value: 'blockquote'}
+        { title: 'Normal', value: 'normal' },
+        { title: 'Quote', value: 'blockquote' },
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [{ title: 'Bullet', value: 'bullet' }],
       marks: {
         decorators: [
-          {title: 'Strong', value: 'strong'}, 
-          {title: 'Emphasis', value: 'em'}],
-        annotations:[
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+        ],
+        annotations: [
           {
             title: 'URL',
             name: 'link',
             type: 'object',
-            fields: [{title: 'URL', name: 'href', type: 'url',}]
-          }
-        ]
-      }
+            fields: [{ title: 'URL', name: 'href', type: 'url' }],
+          },
+        ],
+      },
     },
     /* adtnl types */
     // {type: 'image', hotspot: true} // images excluded
-  ]
-}
+  ],
+};

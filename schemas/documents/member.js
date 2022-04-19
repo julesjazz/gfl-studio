@@ -1,9 +1,9 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'member',
-  title: 'Members',
+  title: 'Member',
   type: 'document',
   icon: () => <Icon emoji="👩‍🎤" />,
   preview: {
@@ -11,79 +11,114 @@ export default {
       title: 'name',
       nickname: 'nickname',
       pronouns: 'pronouns',
-      media: 'image'
+      media: 'image',
     },
-    prepare({title, nickname, pronouns, media}) {
+    prepare({ title, nickname, pronouns, media }) {
       return {
         title: nickname || title,
         subtitle: `${pronouns || ''}`,
-        media: media || <Icon emoji="🧑‍🎤" />
-      }
-    }
+        media: media || <Icon emoji="🧑‍🎤" />,
+      };
+    },
   },
   groups: [
-    {name:'details', title: 'Details' },
-    {name:'contact', title: 'Contact Info' },
-    {name:'media', title: 'Media' },
-    {name:'bio', title: 'Bio' },
-    {name:'roles', title: 'Roles' },
+    { name: 'details', title: 'Details' },
+    { name: 'contact', title: 'Contact Info' },
+    { name: 'media', title: 'Media' },
+    { name: 'bio', title: 'Bio' },
+    { name: 'roles', title: 'Roles' },
   ],
   fields: [
     {
       name: 'active',
       title: 'Active Member',
       type: 'boolean',
+      description: 'Active member',
       group: 'details',
-      initialValue: true
+      initialValue: true,
     },
     {
       name: 'name',
       title: 'Name',
+      type: 'string',
       group: 'details',
-      type: 'string'
     },
     {
       name: 'nickname',
       title: 'Nickname',
+      type: 'string',
       description: 'Used for member url slug',
       group: 'details',
-      type: 'string'
     },
     {
       name: 'pronouns',
       title: 'Pronouns',
+      type: 'string',
       group: 'details',
-      type: 'string'
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      group: 'details',
       description: 'Page URL (site.com/{slug}), required',
-      validation: Rule => Rule.required(),
+      group: 'details',
+      validation: (Rule) => Rule.required(),
       options: {
-        source: doc => doc.nickname ? doc.nickname : doc.name,
+        source: (doc) => (doc.nickname ? doc.nickname : doc.name),
         maxLength: 96,
-      }
+      },
     },
-    {name: 'url', title: '🌐 URL', type: 'string', group: 'contact'},
-    {name: 'email', title: '＠ Email', type: 'string', group: 'contact'},
-    {name: 'phone', title: '📞 Phone', type: 'string', group: 'contact'},
-    {name: 'twitter', title: '🐦 Twitter', type: 'string', group: 'contact'},
-    {name: 'instagram', title: '🤳 Instagram', type: 'string', group: 'contact'},
-    {name: 'facebook', title: '👍 Facebook', type: 'string', group: 'contact'},
-    {name: 'other', title: '👤 Other', type: 'string', group: 'contact'},
+    {
+      name: 'url',
+      title: '🌐 URL',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'email',
+      title: '＠ Email',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'phone',
+      title: '📞 Phone',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'twitter',
+      title: '🐦 Twitter',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'instagram',
+      title: '🤳 Instagram',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'facebook',
+      title: '👍 Facebook',
+      type: 'string',
+      group: 'contact',
+    },
+    {
+      name: 'other',
+      title: '👤 Other',
+      type: 'string',
+      group: 'contact',
+    },
     {
       name: 'image',
-      type: 'image',
       title: 'Image',
+      type: 'image',
       group: 'media',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
-    // TODO: member roles two-way relation with performances 
     {
       name: 'roles',
       type: 'array',
@@ -92,21 +127,21 @@ export default {
       description: 'Roles & Tiles',
       of: [
         {
-          type: 'role'
-        }
-      ]
+          type: 'role',
+        },
+      ],
     },
     {
       name: 'summary',
-      type: 'text',
       title: 'Summary',
-      group: 'bio'
+      type: 'text',
+      group: 'bio',
     },
     {
       name: 'bio',
       title: 'Bio',
+      type: 'pTextLite',
       group: 'bio',
-      type: 'pTextLite'
-    }
-  ]
-}
+    },
+  ],
+};

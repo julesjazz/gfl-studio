@@ -1,20 +1,34 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'article',
-  title: 'Articles',
+  title: 'Article',
   type: 'document',
   icon: () => <Icon emoji="📝" />,
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image',
+      category: 'category.title',
+    },
+    prepare({ title, category, media }) {
+      return {
+        title: title,
+        subtitle: category,
+        media: media || <Icon emoji="🎭" />,
+      };
+    },
+  },
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'Document title, primary header'
+      description: 'Document title, primary header',
     },
     {
-      name:'subtitle',
+      name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
     },
@@ -25,16 +39,16 @@ export default {
       description: 'Page URL (site.com/{slug})',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'summary',
@@ -42,14 +56,14 @@ export default {
       type: 'text',
       description: 'Content Summary',
       options: {
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: {type: 'category'}
+      to: { type: 'category' },
     },
     {
       name: 'tags',
@@ -58,14 +72,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'tag'}]
-        }
-      ]
+          to: [{ type: 'tag' }],
+        },
+      ],
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'pText'
-    }
-  ]
-}
+      type: 'pText',
+    },
+  ],
+};

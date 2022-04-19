@@ -1,45 +1,45 @@
-import React from 'react'
-import Icon from '../../components/emojiIcon'
+import React from 'react';
+import Icon from '../../components/emojiIcon';
 
 export default {
   name: 'venue',
-  title: 'Venues',
+  title: 'Venue',
   type: 'document',
   icon: () => <Icon emoji="🏟" />,
   fields: [
     {
       name: 'title',
       title: 'Venue Name',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'slug',
       title: 'Venue Slug',
-      description: 'page slug for frontend routing',
       type: 'slug',
+      description: 'page slug for frontend routing',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
-      type: 'image',
       title: 'Image',
+      type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'phone',
       title: 'Phone Number',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'mapurl',
       title: 'Map URL',
+      type: 'url',
       description: 'link to google maps or other map site',
-      type: 'url'
     },
     {
       name: 'address',
@@ -49,34 +49,34 @@ export default {
         {
           name: 'address1',
           title: 'Street Address',
-          type: 'string'
+          type: 'string',
         },
         {
           name: 'address2',
           title: 'Address Line 2',
-          type: 'string'
+          type: 'string',
         },
         {
           name: 'city',
           title: 'City',
-          type: 'string'
+          type: 'string',
         },
         {
           name: 'state',
           title: 'State',
-          type: 'string'
+          type: 'string',
         },
         {
           name: 'zip',
           title: 'Zip',
-          type: 'string'
+          type: 'string',
         },
-      ]
+      ],
     },
     {
       name: 'notes',
       title: 'Venue Notes',
-      type: 'text'
-    }
-  ]
-}
+      type: 'text',
+    },
+  ],
+};
