@@ -4,6 +4,6 @@ export default S.listItem()
   .title('Shows')
   .child(
     S.documentTypeList('show').defaultOrdering([
-      { default: true, field: 'premierDate', direction: 'desc' },
+      { field: 'premierDate', direction: 'desc' },
     ])
   );

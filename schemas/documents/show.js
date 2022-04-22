@@ -12,14 +12,14 @@ export default {
       title: 'Premier Date',
       name: 'premierDate',
       by: [
-        {field: 'premierDate', direction: 'desc'}
+        {field: 'premierDate', direction: 'asc'}
       ]
     },
     {
       title: 'Title',
       name: 'title',
       by: [
-        {field: 'title', direction: 'desc'}
+        {field: 'title', direction: 'asc'}
       ]
     }
   ],

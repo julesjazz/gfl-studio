@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder';
 import listCompany from './listCompany';
 import listArticles from './listArticles';
 import listShows from './listShows';
-import listTickets from './listTickets';
+import listPerformances from './listPerformances';
 import listEverything from './listEverything';
 
 export default () =>
@@ -12,7 +12,7 @@ export default () =>
       listCompany,
       listArticles,
       listShows,
-      listTickets,
+      listPerformances,
       S.divider(),
       listEverything,
     ]);
