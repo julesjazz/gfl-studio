@@ -7,7 +7,21 @@ export default {
   type: 'document',
   icon: () => <Icon emoji="🎬" />,
   orderings: [
-    {title: 'Premier Date', name: 'premierDate', by: [{field: 'premier', direction: 'desc'}]},
+    {
+      default: true,
+      title: 'Premier Date',
+      name: 'premierDate',
+      by: [
+        {field: 'premierDate', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Title',
+      name: 'title',
+      by: [
+        {field: 'title', direction: 'desc'}
+      ]
+    }
   ],
   preview: {
     select: {
@@ -32,6 +46,7 @@ export default {
     { name: 'info', title: 'Show Info' },
     { name: 'performances', title: 'Performances' },
   ],
+  // FIELDS >>------------------------------------------------------>>
   fields: [
     {
       group: 'details',

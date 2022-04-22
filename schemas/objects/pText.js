@@ -30,11 +30,16 @@ export default {
             name: 'link',
             title: 'URL',
             type: 'object',
-            fields: [{ 
-              title: 'URL',
-              name: 'href',
-              type: 'url',
-            }],
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
+                validation: Rule => Rule.uri({
+                  allowRelative: true,
+                })
+              },
+            ],
           },
         ],
       },
