@@ -32,6 +32,15 @@ export default {
   },
   fields: [
     {
+      name: 'checkedIn',
+      title: 'Checked In ✅',
+      type: 'boolean',
+      initialValue: false,
+      options: {
+        layout: 'checkbox'
+      }
+    },
+    {
       name: 'name',
       title: 'Name',
       type: 'string',
@@ -40,12 +49,6 @@ export default {
       name: 'email',
       title: 'Email',
       type: 'email',
-    },
-    {
-      name: 'checkedIn',
-      title: 'Checked In ✅',
-      type: 'boolean',
-      initialValue: false,
     },
     {
       name: 'performance',
@@ -67,6 +70,7 @@ export default {
       name: 'notes',
       title: 'Notes',
       type: 'text',
+      rows: 3,
       description: 'Special requests & Acccessibility concerns',
     },
   ],

@@ -55,6 +55,7 @@ export default {
       title: 'Summary',
       type: 'text',
       description: 'Content Summary',
+      rows: 3,
       options: {
         maxLength: 96,
       },

@@ -77,6 +77,7 @@ export default {
       name: 'notes',
       title: 'Venue Notes',
       type: 'text',
+      rows: 3,
     },
   ],
 };

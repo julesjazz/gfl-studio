@@ -135,6 +135,7 @@ export default {
       name: 'summary',
       title: 'Summary',
       type: 'text',
+      rows: 3,
       group: 'bio',
     },
     {

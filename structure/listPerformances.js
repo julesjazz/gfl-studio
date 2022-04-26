@@ -1,7 +1,7 @@
-import S from '@sanity/desk-tool/structure-builder';
-import client from 'part:@sanity/base/client';
+import S from '@sanity/desk-tool/structure-builder'
+import client from 'part:@sanity/base/client'
 
-const sanityClient = client.withConfig({ apiVersion: '2022-04-10' });
+const sanityClient = client.withConfig({ apiVersion: '2022-04-10' })
 
 const query = `{
   "shows": *[_type == "show" && !(_id in path("drafts.**"))]{title, _id},
@@ -16,11 +16,7 @@ const query = `{
 export default S.listItem()
   .title('Performances')
   .child(async () => {
-    // const shows = await sanityClient.fetch(showQuery);
-    // const perfs = await sanityClient.fetch(perfQuery);
-    const data = await sanityClient.fetch(query)
-    const {shows, perfs} = data
-    // console.log(perfs);
+    const { shows, perfs } = await sanityClient.fetch(query)
     return S.list()
       .title('Shows')
       .items([
@@ -38,13 +34,14 @@ export default S.listItem()
                       .child(
                         S.documentList()
                           .title('Tickets')
-                          .filter('_type == "ticket" && performance._ref == $perfId')
+                          .filter(
+                            '_type == "ticket" && performance._ref == $perfId'
+                          )
                           .params({ perfId: perf._id })
                       )
                   ),
                 ])
             )
         ),
-      ]);
-  });
-
+      ])
+  })

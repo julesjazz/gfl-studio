@@ -63,6 +63,7 @@ export default {
       name: 'notes',
       title: 'Performance Notes',
       type: 'text',
+      rows: 5,
       description: 'Optional notes about the performance',
     },
   ],

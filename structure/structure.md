@@ -29,14 +29,3 @@ export default () =>
 - **EVERYTHING**
   - all document types without additional sorting
     (optionally: `import { schemaDocs } from '../schemas/schema'`)
-
----
-# Shows
-- map ( list title = show.title)
-# Tickets
-- map( list title = show.title)
-  - map( list title = performance(date+venue) per ^show.title)
-    - map( list of tickets)
-```groq
-
-```

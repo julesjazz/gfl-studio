@@ -11,17 +11,13 @@ export default {
       default: true,
       title: 'Premier Date',
       name: 'premierDate',
-      by: [
-        {field: 'premierDate', direction: 'asc'}
-      ]
+      by: [{ field: 'premierDate', direction: 'asc' }],
     },
     {
       title: 'Title',
       name: 'title',
-      by: [
-        {field: 'title', direction: 'asc'}
-      ]
-    }
+      by: [{ field: 'title', direction: 'asc' }],
+    },
   ],
   preview: {
     select: {
@@ -113,6 +109,7 @@ export default {
       name: 'summary',
       title: 'Summary',
       type: 'text',
+      rows: 3,
       group: 'info',
     },
     {

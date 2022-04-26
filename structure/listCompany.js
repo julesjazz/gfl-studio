@@ -1,5 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder';
 import client from 'part:@sanity/base/client';
+import logo from '../components/logo';
+
 
 const sanityClient = client.withConfig({ apiVersion: '2022-04-10' });
 
@@ -9,7 +11,8 @@ const companyQuery = sanityClient.fetch(
 );
 
 export default S.listItem()
-  .title('Grapefruit Lab')
+  .title('Company')
+  .icon(logo)
   .child(() => {
     return companyQuery.then((res) => {
       return S.document().schemaType('company').documentId(res);
