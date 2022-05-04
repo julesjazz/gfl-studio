@@ -3,13 +3,12 @@ import client from 'part:@sanity/base/client'
 
 const sanityClient = client.withConfig({ apiVersion: '2022-04-10' })
 
-const query = `{
+const query = /* groq */ `{
   "shows": *[_type == "show" && !(_id in path("drafts.**"))]{title, _id},
   "perfs": *[_type == "performance" && !(_id in path("drafts.**"))]{
     _id,
     "title": show->.title,
-    date,
-    "venue": venue->.title
+    date, "venue": venue->.title
   }
 }`
 
