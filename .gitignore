@@ -27,4 +27,6 @@ test/stubs-layout-cache/_includes/*.js
 # backups
 production.tar.gz
 development.tar.gz
-.DS_Store
+
+# Ignore dist
+/dist/
