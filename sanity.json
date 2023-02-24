@@ -32,7 +32,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "documents-pane",
-    "media-library",
+    "media",
     "@sanity/vision"
   ],
   "parts": [
